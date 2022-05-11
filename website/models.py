@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Luz(models.Model):
-    luz = models.CharField('Luz Necessária', max_length=45)
+    luz = models.CharField('Luz', max_length=45)
 
     def __str__(self):
         return self.luz
@@ -18,7 +18,7 @@ class Produto(models.Model):
     url_imagem = models.CharField(max_length=255, blank=True)
     tamanho_pote = models.IntegerField('Tamanho do Pote (cm)', blank=False)
     rega_necessaria = models.IntegerField('Rega Necessária (x por semana)', blank=False)
-    id_luz = models.ForeignKey(Luz, models.RESTRICT, db_column='id_luz', null=False, verbose_name='Luz Necessária')
+    luz = models.ForeignKey(Luz, models.RESTRICT, db_column='id_luz', null=False, verbose_name='Luz Necessária')
     toxica_animais = models.BooleanField('Tóxica para Animais?')
 
     def __str__(self):
