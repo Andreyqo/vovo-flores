@@ -1,9 +1,46 @@
 <div class="produto-card">
     <img src="{{ produto.url_imagem }}" />
     <h2>{{ produto.produto }}</h2>
-    <p>Valor: {{ produto.valor }}</p>
-    <p>Tamanho do Pote: {{ produto.tamanho_pote }}cm</p>
-    <p>Luz: {{ produto.luz }}</p>
-    <p>Rega Necessária: {{ produto.rega_necessaria }}x por semana</p>
-    <p>Tóxica para Animais? {{ produto.toxica_animais|yesno:'Sim, Não' }}</p>
+    <table>
+        <tr>
+            <td>
+                Valor
+            </td>
+            <td>
+                R$ {{ produto.valor }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tamanho do Pote
+            </td>
+            <td>
+                {{ produto.tamanho_pote }}cm
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Luz
+            </td>
+            <td>
+                {{ produto.luz }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Rega Necessária
+            </td>
+            <td>
+                {{ produto.rega_necessaria }}x por semana
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tóxica para Animais?
+            </td>
+            <td>
+                {{ produto.toxica_animais|yesno:'Sim, Não' }}
+            </td>
+        </tr>
+    </table>
 </div>

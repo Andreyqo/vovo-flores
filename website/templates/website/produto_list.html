@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="produtos-list">
 {% for produto in object_list %}
 {% include 'website/produto_card.html' %}
 {% endfor %}
+
+</div>
 {% endblock %}
